@@ -1,22 +1,30 @@
-# robotarm_ws
+# Robot Arm Workspace
 
-Apply forward kinematics and inverse kinematics using the robot arm's URDF file. 
+This repository contains the implementation of forward kinematics and inverse kinematics using the robot arm's URDF file. Although specifically designed for the Yahboom DOFBOT 6-DoF robot arm, it can be adapted for other robot arms by saving the URDF file in the URDF folder and updating the file name in `robotarm_ws/src/kinematics_pkg/scripts/ik_solver.py` at line 67.
 
-This repo is made specifically for Yahboom DOFBOT 6-DoF robot arm but could work with other robot arms. Save the URDF file of your robot arm into the URDF folder and change the urdf file name at line 67 in robotarm_ws/src/kinematics_pkg/scripts/ik_solver.py
+## Features
 
-Launch input.py, ik_solver.py and mover.py in the script folder simulatenously.
+- **Forward Kinematics**: Calculate the position of the robot arm's end-effector based on the given joint angles.
+- **Inverse Kinematics**: Determine the necessary joint angles to place the end-effector at a desired position.
 
-The function of these nodes are
+## Usage
 
-input.py - user input values of either coordinates or servo angles. based on the length of the input, the program will either send to ik_solver.py or mover.py
+1. Save your robot arm's URDF file into the `URDF` folder.
+2. Update the URDF file name in `ik_solver.py` at line 67.
+3. Launch `input.py`, `ik_solver.py`, and `mover.py` in the `scripts` folder simultaneously.
 
-ik_solver.py - receives the x,y,z coordinates the user inputted in input.py then solves the inverse kinematics to get the angle needed to get to the target location
+## Nodes
 
-mover.py - moves the robotic arm
+- **input.py**: Accepts user input of either coordinates or servo angles. Based on the length of the input, it sends the data to either `ik_solver.py` or `mover.py`.
+- **ik_solver.py**: Receives the x, y, z coordinates from `input.py` and solves the inverse kinematics to determine the necessary joint angles to reach the target position.
+- **mover.py**: Executes the movements of the robotic arm based on the calculated angles.
 
-This program uses ROS Noetic on Linux 20.04.
+## Requirements
 
-This repo was created to build the project below for my final year project. Colour sorting robot arm for pick and place applications. Built the software and programs from the group up. Embed link can be found below.
+- ROS Noetic on Linux 20.04
 
-https://youtu.be/7RF_a9DTxpA
+## Project Context
 
+This repository was created for a final year project involving a color sorting robot arm for pick-and-place applications. The software and programs were developed from scratch to achieve this functionality.
+
+[Watch the project in action](https://youtu.be/7RF_a9DTxpA)
