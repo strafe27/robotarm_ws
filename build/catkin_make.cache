@@ -1,0 +1,2 @@
+kinematics_pkg
+-DCATKIN_DEVEL_PREFIX=/home/dofbot/robotarm_ws/devel -DCMAKE_INSTALL_PREFIX=/home/dofbot/robotarm_ws/install -G Unix Makefiles

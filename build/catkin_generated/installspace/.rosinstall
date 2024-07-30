@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/dofbot/robotarm_ws/install/setup.sh

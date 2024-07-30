@@ -1,0 +1,8 @@
+prefix=/home/dofbot/robotarm_ws/install
+
+Name: kinematics_pkg
+Description: Description of kinematics_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

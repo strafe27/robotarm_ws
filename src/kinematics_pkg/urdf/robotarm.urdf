@@ -1,0 +1,107 @@
+<?xml version="1.0"?> 
+ <robot name="robot"> 
+     <link name="base_link"> 
+         <visual> 
+             <geometry> 
+                 <box size ="0.05 0.05 0.129"/> 
+             </geometry> 
+             <origin rpy="0 0 0" xyz="0 0 0.0645"/> 
+         </visual> 
+     </link> 
+    
+     <joint name="base_link_link1" type="revolute">
+      <parent link="base_link"/>
+      <child link="link1"/>
+      <origin xyz="0 0 0.129" rpy="0 0 0" />
+      <axis xyz="0 0 1"/>
+        <limit lower="-1.57" upper="1.57" />
+    </joint>
+     
+     <link name="link1"> 
+         <visual> 
+             <geometry> 
+                 <box size="0.04 0.04 0.0435"/> 
+             </geometry> 
+             <origin rpy="0 0 0" xyz="0 0 0.02175"/> 
+         </visual> 
+     </link>
+     
+     <joint name="link1_link2" type="revolute">
+      <parent link="link1"/>
+      <child link="link2"/>
+      <origin xyz="0 0 0.0435" rpy="0 0 0" />
+      <axis xyz="1 0 0"/>
+        <limit lower="-1.57" upper="1.57" />
+    </joint>
+     
+    <link name="link2"> 
+         <visual> 
+             <geometry> 
+                 <box size="0.03 0.03 0.08285"/>
+             </geometry> 
+             <origin rpy="0 0 0" xyz="0 0 0.041425"/> 
+         </visual> 
+     </link>
+     <joint name="link2_link3" type="revolute">
+      <parent link="link2"/>
+      <child link="link3"/>
+      <origin xyz="0 0 0.08285" rpy="0 0 0" />
+      <axis xyz="1 0 0"/>
+        <limit lower="-1.57" upper="1.57" />
+    </joint>
+
+     <link name="link3"> 
+         <visual> 
+             <geometry> 
+                 <box size="0.02 0.02 0.08285"/>
+             </geometry> 
+             <origin rpy="0 0 0" xyz="0 0 0.041425"/> 
+         </visual> 
+     </link>
+     <joint name="link3_link4" type="revolute">
+      <parent link="link3"/>
+      <child link="link4"/>
+      <origin xyz="0 0 0.08285" rpy="0 0 0" />
+      <axis xyz="1 0 0"/>
+        <limit lower="-1.57" upper="1.57" />
+    </joint>
+     <link name="link4"> 
+         <visual> 
+             <geometry> 
+                 <box size="0.01 0.01 0.07385"/>
+             </geometry> 
+             <origin rpy="0 0 0" xyz="0 0 0.036925"/> 
+         </visual> 
+     </link>
+
+     <joint name="link4_gripper" type="revolute">
+      <parent link="link4"/>
+      <child link="gripper"/>
+      <origin xyz="0 0 0.07385" rpy="0 0 0" />
+      <axis xyz="0 0 1"/>
+        <limit lower="-1.57" upper="1.57" />
+    </joint>
+     <link name="gripper"> 
+         <visual> 
+             <geometry> 
+                 <box size= "0.005 0.005 0.11"/> 
+             </geometry> 
+             <origin rpy="0 0 0" xyz="0 0 0.055"/> 
+         </visual> 
+     </link>
+     
+     <joint name="gripper_dummy" type="fixed">
+      <parent link="gripper"/>
+      <child link="dummy"/>
+      <origin xyz="0 0 0.11" rpy="0 0 0" />
+    </joint>
+
+     <link name="dummy"> 
+         <visual> 
+             <geometry> 
+                 <box size= "0.005 0.005 0"/> 
+             </geometry> 
+             <origin rpy="0 0 0" xyz="0 0 0"/> 
+         </visual> 
+     </link>
+ </robot>
