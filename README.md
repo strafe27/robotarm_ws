@@ -4,7 +4,7 @@ Apply forward kinematics and inverse kinematics using the robot arm's URDF file.
 
 This repo is made specifically for Yahboom DOFBOT 6-DoF robot arm but could work with other robot arms. Save the URDF file of your robot arm into the URDF folder and change the urdf file name at line 67 in robotarm_ws/src/kinematics_pkg/scripts/ik_solver.py
 
-Launch input.py, ik_solver.py and mover.py
+Launch input.py, ik_solver.py and mover.py in the script folder simulatenously.
 
 The function of these nodes are
 
