@@ -25,7 +25,7 @@ class Mover:
             # Convert degrees to servo units (if necessary)
             angles = [self.degrees_to_servo_units(angle) for angle in angles]
 
-            self.arm.Arm_serial_servo_write6_array(angles, 1000)
+            self.arm.Arm_serial_servo_write6_array(angles, 1250)
 
         elif len(msg.position) == 5:
             # Extract angles for joints 2 to 7 (adjust indices as needed)
@@ -42,7 +42,7 @@ class Mover:
             angles.append(gripper_servo_units)
 
             # Set the joints on the arm
-            self.arm.Arm_serial_servo_write6_array(angles, 1000)
+            self.arm.Arm_serial_servo_write6_array(angles, 1250)
 
         elif len(msg.position) == 1:
             # Extract the single angle value
